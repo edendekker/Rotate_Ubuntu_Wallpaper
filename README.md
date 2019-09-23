@@ -31,7 +31,7 @@ Add startup entry in your home directory. Change 60 to how many seconds you want
 vi .bashrc
 ...
 ...
-/home/ubuntu/rotate_ubuntu_wallpaper 60 > /dev/null &
+/home/ubuntu/rotate_ubuntu_wallpaper 60 > /dev/null > /dev/null 2>&1 &
 ```
 ### Windows 
 Sorry.
