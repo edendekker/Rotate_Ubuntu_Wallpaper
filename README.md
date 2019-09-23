@@ -22,16 +22,16 @@ git clone https://github.com/edendekker/Rotate_Ubuntu_Wallpaper.git
 ```
 Install in you home directory and make sure you, the owner can execute it.
 ```
-chmod 100 rotate_ubuntu_wallpaper
+chmod 750 rotate_ubuntu_wallpaper
 ls -lrtah
----x------  1 ubuntu    ubuntu     805 Sep 23 19:19 rotate_ubuntu_wallpaper
+-rwxr-x---  1 ubuntu    ubuntu     805 Sep 23 19:19 rotate_ubuntu_wallpaper
 ```
 Add startup entry in your home directory. Change 60 to how many seconds you want to wait before it changes to another picture.
 ```
 vi .bashrc
 ...
 ...
-/home/ubuntu/rotate_ubuntu_wallpaper 60 &
+/home/ubuntu/rotate_ubuntu_wallpaper 60 > /dev/null &
 ```
 ### Windows 
 Sorry.
