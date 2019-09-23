@@ -1,0 +1,37 @@
+#!/bin/bash
+WAIT=$1
+if [ -z $WAIT ]
+then
+    echo "You need to specify a wait value in seconds. Eg. rotate_ubuntu_wallpaper 60 to rotate wallpaper every 60 seconds."
+    exit 1
+fi
+
+while [ 1 -eq 1 ]
+do
+    PICTURE_PATH=/home/e/Pictures
+    LIST=$(ls $PICTURE_PATH/*.jpg)
+
+    counter=1
+
+    if [ -f $PICTURE_PATH/counter ]
+    then
+        counter=$(cat $PICTURE_PATH/counter)
+        counter=$((counter+1))
+        rm $PICTURE_PATH/counter
+    fi
+
+    PICTURE_COUNT=$(ls $PICTURE_PATH/*.jpg | wc -w)
+    if [ $counter -eq $PICTURE_COUNT ]
+    then
+        counter=1
+    fi
+    echo $counter > $PICTURE_PATH/counter
+
+    LIST_ARRAY=($LIST)
+    picture=${LIST_ARRAY[$counter]}
+    echo "Setting picture $picture"
+
+    gsettings set org.gnome.desktop.background picture-uri $picture
+
+    sleep $WAIT
+done
