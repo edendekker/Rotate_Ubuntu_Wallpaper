@@ -1,5 +1,6 @@
 # Rotate Ubuntu Wallpaper
 Rotates an ubuntu desktop's wallpaper using jpg files in the Pictures folder.
+<img src="https://github.com/edendekker/Rotate_Ubuntu_Wallpaper/blob/master/wallpaper_rotator.jpeg" />
 
 ## Limitations
 - Can only be executed upon user session startup and not crontab
