@@ -5,6 +5,12 @@ then
     echo "You need to specify a wait value in seconds. Eg. rotate_ubuntu_wallpaper 60 to rotate wallpaper every 60 seconds."
     exit 1
 fi
+IS_RUNNING=$(ps -ef| grep "rotate_ubuntu_wallpaper"| wc -l)
+if [ $IS_RUNNING -ge 2 ]
+then
+    echo "Aready running rotator. Exiting."
+    exit 1
+fi
 
 while [ 1 -eq 1 ]
 do
