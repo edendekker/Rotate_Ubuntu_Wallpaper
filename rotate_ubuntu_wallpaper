@@ -6,7 +6,7 @@ then
     exit 1
 fi
 IS_RUNNING=$(ps -ef| grep "rotate_ubuntu_wallpaper"| wc -l)
-if [ $IS_RUNNING -ge 2 ]
+if [ $IS_RUNNING -ge 4 ]
 then
     echo "Aready running rotator. Exiting."
     exit 1
