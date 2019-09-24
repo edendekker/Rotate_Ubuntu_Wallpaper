@@ -4,7 +4,7 @@ Rotates an ubuntu desktop's wallpaper using jpg files in the Pictures folder.
 
 ## Limitations
 - Can only be executed upon user session startup and not crontab
--- Maybe i can create a systemd install script that runs at startup for the current user
+ - Maybe i can create a systemd install script that runs at startup for the current user
 - Hardcoded to search for jpg files in the /home/user/Pictures folder
 
 ## Motivation
